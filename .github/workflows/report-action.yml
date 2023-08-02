@@ -39,7 +39,7 @@ jobs:
       run: npm i
 
     - name: Playwright browser updates
-      run: npx playwright install-deps
+      run: npx playwright install
 
     - name: Execution
       run: npx playwright test --grep "${{ github.event.inputs.grep }}"
