@@ -6,6 +6,10 @@ name: TESTOMATIO playwright reporting
 on:
   workflow_dispatch:
     inputs:
+      grep:
+        description: 'tests to grep '
+        required: false
+        default: ''
       run:
         required: false
       testomatio:
@@ -32,9 +36,9 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
         cache-dependency-path: './package-lock.json'
-        
+
     - run: npm ci
-    - run: npx playwright test
+    - run: npx playwright test --grep "${{ github.event.inputs.grep }}"
     env:
         TESTOMATIO: "${{ github.event.inputs.testomatio }}"
         TESTOMATIO_RUN: "${{ github.event.inputs.run }}"
