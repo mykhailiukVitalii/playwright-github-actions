@@ -34,10 +34,8 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
-        cache: 'npm'
-        cache-dependency-path: './package-lock.json'
 
-    - run: npm ci
+    - run: npm i
     - run: npx playwright test --grep "${{ github.event.inputs.grep }}"
     env:
         TESTOMATIO: "${{ github.event.inputs.testomatio }}"
