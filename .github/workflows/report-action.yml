@@ -35,7 +35,12 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
 
-    - run: npm i
+    - name: Setup dependancies
+        run: npm i
+
+    - name: Playwright browser updates
+        run: npx playwright install
+        
     - run: npx playwright test --grep "${{ github.event.inputs.grep }}"
     env:
         TESTOMATIO: "${{ github.event.inputs.testomatio }}"
