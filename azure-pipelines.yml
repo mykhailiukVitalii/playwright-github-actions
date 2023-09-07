@@ -17,12 +17,6 @@ steps:
 
 - script: |
     npm install
-  displayName: 'npm install dependancies'
-
-- script: |
     npx playwright install
-  displayName: 'Playwright browser updates'
-
-- script: |
     TESTOMATIO=$(testomatio) TESTOMATIO_URL=$(testomatio_url) TESTOMATIO_RUN=$(run) CI=1 npx playwright test --grep="$(grep)"
-  displayName: 'run tests'
+  displayName: 'npm install & run tests'
