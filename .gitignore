@@ -6,6 +6,7 @@ node_modules/
 *.tgz
 output/
 test-results/
+playwright-report/
 
 # Env files
 .env-example
