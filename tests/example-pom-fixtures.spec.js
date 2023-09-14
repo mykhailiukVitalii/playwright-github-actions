@@ -8,5 +8,5 @@ test('[e2e test] Successful PC creation', async ({ computersPage, addComputersPa
 
     await addComputersPage.createPc(NAME_PC, "1981-10-10", "1981-11-11", "Netronics");
     // Verify
-    await computersPage.createVerififcation(NAME_PC);
+    await computersPage.createVerififcation(NAME_PC + "fail");
 });
