@@ -18,5 +18,5 @@ steps:
 - script: |
     npm install
     npx playwright install
-    S3_ENDPOINT=$(S3_ENDPOINT) S3_ACCESS_KEY_ID=$(S3_ACCESS_KEY_ID) S3_SECRET_ACCESS_KEY=$(S3_SECRET_ACCESS_KEY) S3_BUCKET=$(S3_BUCKET) S3_REGION=$(S3_REGION) TESTOMATIO=$(testomatio) TESTOMATIO_URL=$(testomatio_url) TESTOMATIO_RUN=$(run) CI=1 npx playwright test --grep="$(grep)" --shard=2/3
+    S3_ENDPOINT=$(S3_ENDPOINT) S3_ACCESS_KEY_ID=$(S3_ACCESS_KEY_ID) S3_SECRET_ACCESS_KEY=$(S3_SECRET_ACCESS_KEY) S3_BUCKET=$(S3_BUCKET) S3_REGION=$(S3_REGION) TESTOMATIO_PRIVATE_ARTIFACTS=1 TESTOMATIO=$(testomatio) TESTOMATIO_URL=$(testomatio_url) TESTOMATIO_RUN=$(run) CI=1 npx playwright test --grep="$(grep)" --shard=2/3
   displayName: 'npm install & run tests'
