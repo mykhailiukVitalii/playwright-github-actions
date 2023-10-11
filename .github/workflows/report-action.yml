@@ -47,3 +47,4 @@ jobs:
         TESTOMATIO: "${{ github.event.inputs.testomatio }}"
         TESTOMATIO_RUN: "${{ github.event.inputs.run }}"
         TESTOMATIO_URL: "${{ github.event.inputs.testomatio_url }}"
+        TESTOMATIO_PRIVATE_ARTIFACTS: 1
